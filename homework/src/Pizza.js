@@ -2,15 +2,19 @@
 
 export class Pizza {
 
-    constructor(chicken, olives, dough, price) {
+    constructor(chicken, olives, dough, bacon, mushrooms, price) {
         this.chicken = chicken;
         this.olives = olives;
         this.dough = dough;
         this.price = price;
+        this.bacon = bacon,
+        this.mushrooms = mushrooms,
+        this.isReady = false;
     }
 
     orderPizza(money) {
-        if (money > this.price) {
+        if (money >= this.price) {
+            this.isReady = true;
             return this;
         }
         else {
@@ -24,6 +28,8 @@ export function NewPizza() {
 
     var state = {
         olives: false,
+        mushrooms: false,
+        bacon: false
     };
 
     this.withChicken = function () {
@@ -31,13 +37,13 @@ export function NewPizza() {
         return this;
     }
 
-    this.withMushrooms = function (mushrooms) {
+    this.withMushrooms = function () {
         state.mushrooms = mushrooms;
         return this;
     }
 
-    this.withBakon = function (bakon) {
-        state.bakon = bakon;
+    this.withBakon = function () {
+        state.bacon = bacon;
         return this;
     }
 
@@ -57,6 +63,7 @@ export function NewPizza() {
 
     this.build = function () {
         console.log(state);
-        return new Pizza(state.filling, state.olives, state.dough, state.price);
+        return new Pizza(state.chicken, state.olives,
+            state.dough, state.bacon, state.mushrooms, state.price);
     }
 };
