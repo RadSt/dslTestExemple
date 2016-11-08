@@ -9,7 +9,7 @@ export function NewWaterAlarm () {
     var state = {
         name: "Water Alarm",
         humidity: 40,
-        battary: 100
+        battery: 100
     };
 
     this.withName = function (name) {
