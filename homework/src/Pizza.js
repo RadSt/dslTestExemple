@@ -42,7 +42,7 @@ export function NewPizza() {
         return this;
     }
 
-    this.withBakon = function () {
+    this.withBacon = function () {
         state.bacon = bacon;
         return this;
     }
