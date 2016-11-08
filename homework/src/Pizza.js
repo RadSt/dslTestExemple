@@ -18,7 +18,7 @@ export class Pizza {
             return this;
         }
         else {
-            return false;
+            throw new Error('You must pay more money');
         }
     }
 };
@@ -38,12 +38,12 @@ export function NewPizza() {
     }
 
     this.withMushrooms = function () {
-        state.mushrooms = mushrooms;
+        state.mushrooms = true;
         return this;
     }
 
     this.withBacon = function () {
-        state.bacon = bacon;
+        state.bacon = true;
         return this;
     }
 
